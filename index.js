@@ -1,8 +1,8 @@
 const express = require("express");
 
-const { scrapeLogic } = require("scrapeLogic");
-const { niftyScrapeLogic } = require("niftyScrapeLogic");
-const { crudeScrapeLogic } = require("crudeScrapeLogic");
+const { scrapeLogic } = require("../scrapeLogic");
+const { niftyScrapeLogic } = require("../niftyScrapeLogic");
+const { crudeScrapeLogic } = require("../crudeScrapeLogic");
 const app = express();
 
 // Enable CORS
@@ -42,3 +42,4 @@ if (process.env.NODE_ENV !== 'production') {
 
 
 module.exports = app;
+
