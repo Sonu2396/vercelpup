@@ -1,12 +1,12 @@
 const puppeteer = require("puppeteer-core");
-const chromium = require("@sparticuz/chromium");
+const chromium = require("chrome-aws-lambda");
 require("dotenv").config();
 
 const crudeScrapeLogic = async (res) => {
   const browser = await puppeteer.launch({
-    args: [...chromium.args, "--incognito", "--lang=en-US,en;q=0.9"],
+    args: chromium.args,
     defaultViewport: chromium.defaultViewport,
-    executablePath: await chromium.executablePath(),
+    executablePath: await chromium.executablePath,
     headless: chromium.headless,
     ignoreHTTPSErrors: true,
   });
